@@ -1480,6 +1480,24 @@ lib LibCairo
       surface : LibCairo::Surface*
     ) : Int32
 
+    fun image_surface_get_width = cairo_image_surface_get_width(
+      surface : LibCairo::Surface*
+    ) : Int32
 
+    fun image_surface_get_height = cairo_image_surface_get_height(
+      surface : LibCairo::Surface*
+    ) : Int32
+
+    fun image_surface_get_stride = cairo_image_surface_get_stride(
+      surface : LibCairo::Surface*
+    ) : Int32
+
+    fun image_surface_get_format = cairo_image_surface_get_format(
+      surface : LibCairo::Surface*
+    ) : LibCairo::Format
+
+    fun image_surface_get_data = cairo_image_surface_get_data(
+      surface : LibCairo::Surface*
+    ) : UInt8*
 
 end

@@ -172,5 +172,8 @@ module Cairo
       LibCairo.image_surface_get_stride(@pointer.as(LibCairo::Surface*))
     end
 
+    def raw_data : UInt8*
+      LibCairo.image_surface_get_data(@pointer.as(LibCairo::Surface*))
+    end
   end
 end
