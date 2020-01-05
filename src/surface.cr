@@ -48,7 +48,7 @@ module Cairo
     end
 
     def reference_count : UInt32
-      LibCairo.surface_get_reference_count(@pointer)
+      LibCairo.surface_get_reference_count(@pointer.as(LibCairo::Surface*))
     end
 
     def status : Status
@@ -56,7 +56,7 @@ module Cairo
     end
 
     def get_type : SurfaceType
-      SurfaceType.new(LibCairo.surface_get_type(@pointer).value)
+      SurfaceType.new(LibCairo.surface_get_type(@pointer.as(LibCairo::Surface*)))
     end
 
     def content : Content
@@ -96,12 +96,12 @@ module Cairo
     end
 
     def flush
-      LibCairo.surface_flush(@pointer)
+      LibCairo.surface_flush(@pointer.as(LibCairo::Surface*))
       self
     end
 
     def mark_dirty
-      LibCairo.surface_mark_dirty(@pointer)
+      LibCairo.surface_mark_dirty(@pointer.as(LibCairo::Surface*))
       self
     end
 
@@ -157,21 +157,20 @@ module Cairo
     end
 
     def format : Format
-      Format.new(LibCairo.image_surface_get_format(@pointer).value)
+      Format.new(LibCairo.image_surface_get_format(@pointer.as(LibCairo::Surface*)))
     end
 
     def width : Int32
-      LibCairo.image_surface_get_width(@pointer)
+      LibCairo.image_surface_get_width(@pointer.as(LibCairo::Surface*))
     end
 
     def height : Int32
-      LibCairo.image_surface_get_height(@pointer)
+      LibCairo.image_surface_get_height(@pointer.as(LibCairo::Surface*))
     end
 
     def stride : Int32
-      LibCairo.image_surface_get_stride(@pointer)
+      LibCairo.image_surface_get_stride(@pointer.as(LibCairo::Surface*))
     end
 
   end
 end
-
