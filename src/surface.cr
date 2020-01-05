@@ -1,7 +1,6 @@
 module Cairo
   class Surface
-    
-    def finalize
+    def destroy
       LibCairo.surface_destroy(@pointer.as(LibCairo::Surface*))
     end
 

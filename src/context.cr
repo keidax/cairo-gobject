@@ -1,7 +1,7 @@
 module Cairo
   class Context
-   
-    def finalize
+
+    def destroy
       LibCairo.destroy(@pointer.as(LibCairo::Context*))
     end
   
