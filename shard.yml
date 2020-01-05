@@ -9,8 +9,7 @@ crystal: 0.31.1
 description: "Cairo bindings for applying with crystal-gobject"
 
 dependencies:
-  gobject :
-    github : jhass/crystal-gobject
-    branch : master
+  gobject:
+    path: ../crystal-gobject
 
 license: MIT
